@@ -1,3 +1,2 @@
 - switch from UseRouter in create-prompt/page.tsx to redirect
   - should just be replacing router.push("/") with redirect("/")
-- up to 1:53:20 in tutorial

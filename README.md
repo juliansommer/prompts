@@ -1,6 +1,22 @@
 # TODO
 
-- attempt to move stuff to server components
+- add search functionality
+
+  - in feed component add search states
+  - both for tags and username
+  - eventually for prompt content but is harder to implement
+  - would just change the posts being displayed on the main page to only be for those tags, not a seperate page?
+
+- implement click on tag
+
+  - go to a dynamic page /posts/tag/[tag]
+  - just the same as the homepage layout but only for that specific tag
+  - then maybe also get some data on how many posts with that tag there is
+
+- implement view other profiles
+
+  - dynamic folder in profile
+    - profile/[id]/page.tsx
 
 - add a way for users to specify what model specifically the prompt is for
 
@@ -28,3 +44,9 @@
 - modify the api that gets the posts to only get 20 not all of them
 
 - add a footer
+
+- if user puts # at start of the tag, remove it.
+
+- add option to switch between light and dark mode
+
+- add loading skeletons

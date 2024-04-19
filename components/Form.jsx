@@ -40,14 +40,18 @@ export default function Form({
           <input
             value={post.tag}
             onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder="#tag"
+            placeholder="tag"
             required
             className="form_input"
           />
         </label>
 
         <div className="flex-end mx-3 mb-5 gap-4">
-          <Link href="/" className="text-sm text-gray-500">
+          {/* Have the href go to /profile if they are editing the prompt */}
+          <Link
+            href={type === "Edit" ? "/profile" : "/"}
+            className="text-sm text-gray-500"
+          >
             Cancel
           </Link>
 
@@ -56,7 +60,7 @@ export default function Form({
             disabled={submitting}
             className="rounded-full bg-primary-orange px-5 py-1.5 text-sm text-white"
           >
-            {submitting ? `${type}...` : type}
+            Submit
           </button>
         </div>
       </form>

@@ -3,6 +3,7 @@ import { useState } from "react"
 import Image from "next/image"
 import { useSession } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
+import { PathnameContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime"
 
 export default function PromptCard({
   post,
@@ -10,6 +11,9 @@ export default function PromptCard({
   handleEdit,
   handleDelete,
 }) {
+  const { data: session } = useSession()
+  const pathName = usePathname()
+  const router = useRouter()
   const [copied, setCopied] = useState("")
 
   const handleCopy = () => {
@@ -59,8 +63,25 @@ export default function PromptCard({
         className="blue_gradient cursor-pointer font-inter text-sm"
         onClick={() => handleTagClick && handleTagClick(post.tag)}
       >
-        {post.tag}
+        #{post.tag}
       </p>
+
+      {session?.user.id === post.creator._id && pathName === "/profile" && (
+        <div className="flex-center mt-5 gap-4 border-t border-gray-100 pt-3">
+          <p
+            className="green_gradient cursor-pointer font-inter text-sm"
+            onClick={handleEdit}
+          >
+            Edit
+          </p>
+          <p
+            className="orange_gradient cursor-pointer font-inter text-sm"
+            onClick={handleDelete}
+          >
+            Delete
+          </p>
+        </div>
+      )}
     </div>
   )
 }

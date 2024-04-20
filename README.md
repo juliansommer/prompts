@@ -1,3 +1,16 @@
+# Features
+
+Currently the site has these features.
+
+- CRUD
+  - Create Post
+  - Load Posts
+  - Edit Post
+  - Delete Posts
+- Google Account Sign in
+- Search Functionality
+- View Profiles
+
 # TODO
 
 - add a upvotes system, then would have the most popular prompts displayed first

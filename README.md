@@ -1,4 +1,8 @@
-# Features
+# Full Stack Next.js Prompts Social Media App
+
+This project uses Next.js to develop a full stack social media app by using api routes for data fetching from MongoDB.
+
+## Features
 
 Currently the site has these features.
 
@@ -11,23 +15,23 @@ Currently the site has these features.
 - Search Functionality
 - View Profiles
 
-# TODO
-
-- caching on vercel broken, i dont think theres anything I can do unless i upgrade my plan
+## TODO
 
 - add a upvotes system, then would have the most popular prompts displayed first
 
-- add loading skeletons?
+  - upvotes field in mongo
+  - everytime a user upvotes a post
+    - make api request to a new route at prompt/[id]/like that then just adds 1 to the count
+    - prompt/[id]/dislike removes one from count
+    - would need to include the userid as well in the request to ensure no duplicate ids / can like a post u have already liked, and can display upvotes on the frontend
+
+- prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it?
+
+- add loading skeletons - specifically for loading the prompts, would i modify the PromptCard component or the pages?
 
 - add a way for users to specify what model specifically the prompt is for
 
   - add an input where user can input theirs and it matches against a list of most common models
-    - if doesnt work, just have it be a custom model
-
-- add a way for users to easily test others prompts
-
-  - if the model is gpt-3.5, can click a button to test prompt
-    - then user inputs their query and show the ai response
 
 - migrate to typescript
 
@@ -38,5 +42,3 @@ Currently the site has these features.
 - add a footer
 
 - add option to switch between light and dark mode
-
-- add loading skeletons

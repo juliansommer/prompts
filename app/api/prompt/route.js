@@ -1,6 +1,8 @@
 import connectToDB from "@utils/database"
 import Prompt from "@models/prompt"
 
+export const revalidate = 1 //revalidate api every 1 second
+
 // Get the 20 most recent prompts
 export async function GET(request) {
   try {
@@ -17,6 +19,3 @@ export async function GET(request) {
     return new Response("Failed to fetch prompts", { status: 500 })
   }
 }
-
-export const revalidate = 0
-export const fetchCache = "force-no-store"

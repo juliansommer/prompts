@@ -7,11 +7,20 @@ export default function Form({
   submitting,
   handleSubmit,
 }) {
+  // Sanitise Tag to be Alphanumeric
+  const handleTagChange = (e) => {
+    const value = e.target.value
+    if (/^[a-z0-9]+$/i.test(value) || value === "") {
+      setPost({ ...post, tag: value })
+    }
+  }
+
   return (
     <section className="flex-start w-full max-w-full flex-col">
       <h1 className="head_text text-left">
         <span className="blue_gradient">{type} Post</span>
       </h1>
+
       <p className="desc max-w-md text-left">
         {type} and share amazing prompts with the world, and let your
         imagination run wild with any AI-powered platform.
@@ -33,21 +42,21 @@ export default function Form({
             className="form_textarea"
           />
         </label>
-        <label>
+        <label className="relative">
           <span className="font-satoshi text-base font-semibold text-gray-700">
             Tag
           </span>
           <input
             value={post.tag}
-            onChange={(e) => setPost({ ...post, tag: e.target.value })}
-            placeholder="tag"
+            onChange={handleTagChange}
+            placeholder="Tag (e.g., tag)"
             required
             className="form_input"
           />
         </label>
 
         <div className="flex-end mx-3 mb-5 gap-4">
-          {/* Have the href go to /profile if they are editing the prompt */}
+          {/* Conditional link based on whether editing or creating a new post */}
           <Link
             href={type === "Edit" ? "/profile" : "/"}
             className="text-sm text-gray-500"

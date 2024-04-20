@@ -3,7 +3,6 @@ import { useState } from "react"
 import Image from "next/image"
 import { useSession } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
-import { PathnameContext } from "next/dist/shared/lib/hooks-client-context.shared-runtime"
 
 export default function PromptCard({
   post,
@@ -16,6 +15,14 @@ export default function PromptCard({
   const router = useRouter()
   const [copied, setCopied] = useState("")
 
+  const handleProfileClick = () => {
+    console.log(post)
+    if (post.creator._id === session?.user.id) {
+      return router.push("/profile")
+    }
+    router.push(`/profile/${post.creator._id}`)
+  }
+
   const handleCopy = () => {
     setCopied(post.prompt)
     navigator.clipboard.writeText(post.prompt)
@@ -25,7 +32,10 @@ export default function PromptCard({
   return (
     <div className="prompt_card">
       <div className="flex items-start justify-between gap-5">
-        <div className="flex flex-1 cursor-pointer items-center justify-start gap-3">
+        <div
+          className="flex flex-1 cursor-pointer items-center justify-start gap-3"
+          onClick={handleProfileClick}
+        >
           <Image
             src={post.creator.image}
             alt={`${post.creator.username} image`}

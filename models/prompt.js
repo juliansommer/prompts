@@ -1,19 +1,24 @@
 import { Schema, model, models } from "mongoose"
 
-const PromptSchema = new Schema({
-  creator: {
-    type: Schema.Types.ObjectId,
-    ref: "User",
+const PromptSchema = new Schema(
+  {
+    creator: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
+    prompt: {
+      type: String,
+      required: [true, "Prompt is required"],
+    },
+    tag: {
+      type: String,
+      required: [true, "Tag is required"], // Fixed typo from 'reqired' to 'required'
+    },
   },
-  prompt: {
-    type: String,
-    required: [true, "Prompt is required"],
+  {
+    timestamps: true, // Enable automatic creation of createdAt and updatedAt fields
   },
-  tag: {
-    type: String,
-    reqired: [true, "Tag is required"],
-  },
-})
+)
 
 const Prompt = models.Prompt || model("Prompt", PromptSchema)
 

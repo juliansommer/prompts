@@ -1,8 +1,15 @@
-# App
+# Features
 
-- Currently the site has these features.
-  - Create an account using sign in with google
-  -
+Currently the site has these features.
+
+- CRUD
+  - Create Post
+  - Load Posts
+  - Edit Post
+  - Delete Posts
+- Google Account Sign in
+- Search Functionality
+- View Profiles
 
 # TODO
 

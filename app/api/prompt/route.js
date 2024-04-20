@@ -17,3 +17,6 @@ export async function GET(request) {
     return new Response("Failed to fetch prompts", { status: 500 })
   }
 }
+
+export const revalidate = 0
+export const fetchCache = "force-no-store"

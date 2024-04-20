@@ -1,3 +1,9 @@
+# App
+
+- Currently the site has these features.
+  - Create an account using sign in with google
+  -
+
 # TODO
 
 - add a upvotes system, then would have the most popular prompts displayed first

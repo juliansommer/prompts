@@ -12,7 +12,7 @@ const PromptSchema = new Schema(
     },
     tag: {
       type: String,
-      required: [true, "Tag is required"], // Fixed typo from 'reqired' to 'required'
+      required: [true, "Tag is required"],
     },
   },
   {

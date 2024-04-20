@@ -1,6 +1,7 @@
 import connectToDB from "@utils/database"
 import Prompt from "@models/prompt"
 
+export const dynamic = "force-dynamic"
 // Get the 20 most recent prompts
 export async function GET(request) {
   try {

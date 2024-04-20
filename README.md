@@ -13,6 +13,8 @@ Currently the site has these features.
 
 # TODO
 
+- caching on vercel broken, i dont think theres anything I can do unless i upgrade my plan
+
 - add a upvotes system, then would have the most popular prompts displayed first
 
 - add loading skeletons?

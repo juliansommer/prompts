@@ -4,7 +4,7 @@ This project uses Next.js to create a full stack social media app by using api r
 
 ## Features
 
-Currently the site has these features.
+Currently the site has these features:
 
 - CRUD
   - Create Post

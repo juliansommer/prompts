@@ -1,6 +1,6 @@
 # Full Stack Next.js Prompts Social Media App
 
-This project uses Next.js to create a full stack social media app by using api routes for data fetching from MongoDB.
+This project uses Next.js to create a full stack social media app by using api routes for data fetching from MongoDB. The basic functionality of the app was created using a tutorial from [JavaScript Mastery](https://www.youtube.com/@javascriptmastery), and then I expanded upon it.
 
 ## Features
 

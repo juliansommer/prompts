@@ -1,6 +1,6 @@
 # Next.js Prompt Sharing App
 
-This project uses Next.js to create a full stack basic social media app. The basic functionality of the app was created using a tutorial from [JavaScript Mastery](https://www.youtube.com/@javascriptmastery), and then I expanded upon it.
+This project uses Next.js with React, JavaScript, Tailwind CSS and MongoDB to create a basic full stack social media app that allows users to post AI prompts.
 
 ## Features
 

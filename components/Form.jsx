@@ -28,8 +28,7 @@ export default function Form({
 
       <form
         onSubmit={handleSubmit}
-        className="glassmorphism mt-10 flex w-full max-w-2xl flex-col gap-7"
-      >
+        className="glassmorphism mt-10 flex w-full max-w-2xl flex-col gap-7">
         <label>
           <span className="font-satoshi text-base font-semibold text-gray-700">
             Your AI Prompt
@@ -59,16 +58,14 @@ export default function Form({
           {/* Conditional link based on whether editing or creating a new post */}
           <Link
             href={type === "Edit" ? "/profile" : "/"}
-            className="text-sm text-gray-500"
-          >
+            className="text-sm text-gray-500">
             Cancel
           </Link>
 
           <button
             type="submit"
             disabled={submitting}
-            className="rounded-full bg-primary-orange px-5 py-1.5 text-sm text-white"
-          >
+            className="bg-primary-blue rounded-full px-5 py-1.5 text-sm text-white">
             Submit
           </button>
         </div>

@@ -22,7 +22,7 @@ export default function CreatePrompt() {
         method: "POST",
         body: JSON.stringify({
           prompt: post.prompt,
-          userId: session?.user.id,
+          userId: session?.user?.id, // Fix: Use optional chaining to safely access the 'id' property
           tag: post.tag,
         }),
       })

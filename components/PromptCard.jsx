@@ -34,8 +34,7 @@ export default function PromptCard({
       <div className="flex items-start justify-between gap-5">
         <div
           className="flex flex-1 cursor-pointer items-center justify-start gap-3"
-          onClick={handleProfileClick}
-        >
+          onClick={handleProfileClick}>
           <Image
             src={post.creator.image}
             alt={`${post.creator.username} image`}
@@ -54,8 +53,7 @@ export default function PromptCard({
           className="copy_btn"
           onClick={() => {
             handleCopy()
-          }}
-        >
+          }}>
           {/* Render The Copy Button only if not already copied */}
           <Image
             src={
@@ -71,23 +69,20 @@ export default function PromptCard({
       <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
       <p
         className="blue_gradient cursor-pointer font-inter text-sm"
-        onClick={() => handleTagClick && handleTagClick(post.tag)}
-      >
+        onClick={() => handleTagClick && handleTagClick(post.tag)}>
         #{post.tag}
       </p>
 
       {session?.user.id === post.creator._id && pathName === "/profile" && (
         <div className="flex-center mt-5 gap-4 border-t border-gray-100 pt-3">
           <p
-            className="green_gradient cursor-pointer font-inter text-sm"
-            onClick={handleEdit}
-          >
+            className="blue_gradient cursor-pointer font-inter text-sm"
+            onClick={handleEdit}>
             Edit
           </p>
           <p
-            className="orange_gradient cursor-pointer font-inter text-sm"
-            onClick={handleDelete}
-          >
+            className="purple_gradient cursor-pointer font-inter text-sm"
+            onClick={handleDelete}>
             Delete
           </p>
         </div>

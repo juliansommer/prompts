@@ -49,13 +49,11 @@ Create a `.env` file in the root of your project and add the following content:
 ```env
 NEXTAUTH_URL=http://localhost:3000
 NEXTAUTH_URL_INTERNAL=http://localhost:3000
-NEXTAUTH_SECRET=
-GOOGLE_ID=
-GOOGLE_CLIENT_SECRET=
-MONGODB_URI=
+NEXTAUTH_SECRET= (Random Generated Auth Secret)
+GOOGLE_ID= (Your Google Cloud ID)
+GOOGLE_CLIENT_SECRET= (Your Google Cloud Secret ID)
+MONGODB_URI= (Your MongoDB URI)
 ```
-
-You will need to add your actual credentials. You can obtain these credentials from [Google Cloud Console](https://console.cloud.google.com/welcome?rapt=AEjHL4MBaLLneW6OfAHf_zgms1eWZFw1wdy0_KIC4uh1nEqh2m4ojOvrXNlzJ4h7CZTkpiWgcsoHbUvS-FMdCP7WIkaVlPAeU7cnVR6Y0wJHeLMOtU6KAzA&project=promptopia-385410), [Cryptpool](https://www.cryptool.org/en/cto/openssl) (for a random Auth Secret), and [MongoDB](https://www.mongodb.com/).
 
 **Running the Project**
 
@@ -67,6 +65,17 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## TODO
 
+- migrate to typescript
+
+- prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it?
+
+- add a footer
+
+- add a way for users to specify what model specifically the prompt is for
+
+  - add an input where user can input theirs and it matches against a list of most common models (this would come after just use a normal string for now)
+  - then could also have a page where you can view all the posts for that specific model too / filter the results on the main page like when u click a tag
+
 - add a upvotes system, then would have the most popular prompts displayed first
 
   - upvotes field in mongo
@@ -75,20 +84,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     - prompt/[id]/dislike removes one from count
     - would need to include the userid as well in the request to ensure no duplicate ids / can like a post u have already liked, and can display upvotes on the frontend
 
-- prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it?
-
-- add loading skeletons - specifically for loading the prompts, would i modify the PromptCard component or the pages?
-
-- add a way for users to specify what model specifically the prompt is for
-
-  - add an input where user can input theirs and it matches against a list of most common models
-
-- migrate to typescript
+- add loading skeletons - specifically for loading the prompts, would i modify the PromptCard component or the pages
 
 - add option for users to change username on profile page
-
-- change styling / colour scheme of website
-
-- add a footer
 
 - add option to switch between light and dark mode

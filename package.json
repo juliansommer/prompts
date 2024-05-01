@@ -24,6 +24,7 @@
     "@types/node": "^20.12.7",
     "@types/react": "^18.3.1",
     "autoprefixer": "^10.0.1",
+    "eslint": "^9.1.1",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.13",

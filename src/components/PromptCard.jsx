@@ -56,11 +56,7 @@ export default function PromptCard({
           }}>
           {/* Render The Copy Button only if not already copied */}
           <Image
-            src={
-              copied === post.prompt
-                ? "/assets/icons/tick.svg"
-                : "/assets/icons/copy.svg"
-            }
+            src={copied === post.prompt ? "/icons/tick.svg" : "/icons/copy.svg"}
             width={12}
             height={12}
           />

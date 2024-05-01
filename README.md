@@ -73,7 +73,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 - add a way for users to specify what model specifically the prompt is for
 
-  - add an input where user can input theirs and it matches against a list of most common models (this would come after just use a normal string for now)
+  - would need to update models/prompt.js and delete all the current records in mongo, add an input field on Form.jsx component, display the model somewhere on promptcard.jsx, modify api/prompt/new/route.js to accept the model field as well
+
+  - long term could add a input box and it matches a predetermined list of models and if not just accept custom, think country select dropdown thing
+
   - then could also have a page where you can view all the posts for that specific model too / filter the results on the main page like when u click a tag
 
 - add a upvotes system, then would have the most popular prompts displayed first

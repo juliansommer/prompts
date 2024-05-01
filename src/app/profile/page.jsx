@@ -19,7 +19,7 @@ export default function MyProfile() {
     if (session?.user.id) {
       fetchPosts()
     }
-  }, [])
+  })
 
   const handleEdit = (post) => {
     router.push(`/update-prompt?id=${post._id}`)

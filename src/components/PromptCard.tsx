@@ -3,13 +3,14 @@ import { useState } from "react"
 import Image from "next/image"
 import { useSession } from "next-auth/react"
 import { usePathname, useRouter } from "next/navigation"
+import { PromptCardProps } from "@types"
 
 export default function PromptCard({
   post,
   handleTagClick,
   handleEdit,
   handleDelete,
-}) {
+}: PromptCardProps) {
   const { data: session } = useSession()
   const pathName = usePathname()
   const router = useRouter()
@@ -17,7 +18,7 @@ export default function PromptCard({
 
   const handleProfileClick = () => {
     console.log(post)
-    if (post.creator._id === session?.user.id) {
+    if (post.creator._id === session?.user?.id) {
       return router.push("/profile")
     }
     router.push(`/profile/${post.creator._id}`)
@@ -59,6 +60,7 @@ export default function PromptCard({
             src={copied === post.prompt ? "/icons/tick.svg" : "/icons/copy.svg"}
             width={12}
             height={12}
+            alt={"Copy button"}
           />
         </div>
       </div>
@@ -69,16 +71,16 @@ export default function PromptCard({
         #{post.tag}
       </p>
 
-      {session?.user.id === post.creator._id && pathName === "/profile" && (
+      {session?.user?.id === post.creator._id && pathName === "/profile" && (
         <div className="flex-center mt-5 gap-4 border-t border-gray-100 pt-3">
           <p
             className="blue_gradient cursor-pointer font-inter text-sm"
-            onClick={handleEdit}>
+            onClick={(event) => handleEdit(event)}>
             Edit
           </p>
           <p
             className="purple_gradient cursor-pointer font-inter text-sm"
-            onClick={handleDelete}>
+            onClick={(event) => handleDelete(event)}>
             Delete
           </p>
         </div>

@@ -4,7 +4,7 @@ import connectToDB from "@utils/database"
 import User from "@models/user"
 import extractUsername from "@utils/extractUsername"
 
-const handler = NextAuth({
+export const { handlers } = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -47,5 +47,3 @@ const handler = NextAuth({
     },
   },
 })
-
-export { handler as GET, handler as POST }

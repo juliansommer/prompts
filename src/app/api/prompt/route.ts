@@ -3,7 +3,7 @@ import Prompt from "@models/prompt"
 
 export const dynamic = "force-dynamic"
 // Get the 20 most recent prompts
-export async function GET(request) {
+export async function GET(request: any) {
   try {
     await connectToDB()
     // Limit to 20 documents, sort by creation date in descending order

@@ -1,6 +1,6 @@
 # Next.js Prompt Sharing App
 
-This project uses Next.js with React, JavaScript, Tailwind CSS and MongoDB to create a basic full stack social media app that allows users to post AI prompts.
+This project uses Next.js with React, TypeScript, Tailwind CSS and MongoDB to create a basic full stack social media app that allows users to post AI prompts.
 
 ## Features
 
@@ -65,11 +65,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## TODO
 
-- fix the bug in nextauth
-
 - migrate from useSession() to auth()
-
-- migrate to typescript
 
 - prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it?
 

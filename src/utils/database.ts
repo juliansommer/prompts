@@ -11,7 +11,8 @@ export default async function connectToDB() {
   }
 
   try {
-    await mongoose.connect(process.env.MONGODB_URI, {
+    const mongodbUri = process.env.MONGODB_URI || "" // Ensure the variable is defined
+    await mongoose.connect(mongodbUri, {
       dbName: "share_prompt",
     })
     isConnected = true

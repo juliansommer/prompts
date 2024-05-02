@@ -60,7 +60,7 @@ export default function Feed() {
   }
 
   return (
-    <section className="feed">
+    <section className="mx-auto mt-16 flex w-full max-w-xl flex-col items-center justify-center gap-2">
       <form className="flex-center relative w-full">
         <input
           type="text"
@@ -68,7 +68,7 @@ export default function Feed() {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="search_input peer"
+          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-satoshi text-sm font-medium shadow-lg focus:border-black focus:outline-none focus:ring-0"
         />
       </form>
 

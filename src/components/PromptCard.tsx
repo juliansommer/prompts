@@ -31,7 +31,7 @@ export default function PromptCard({
   }
 
   return (
-    <div className="prompt_card">
+    <div className="h-fit w-full flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20  bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] dark:border-gray-700">
       <div className="flex items-start justify-between gap-5">
         <div
           className="flex flex-1 cursor-pointer items-center justify-start gap-3"
@@ -44,14 +44,14 @@ export default function PromptCard({
             className="rounded-full object-contain"
           />
           <div className="flex flex-col">
-            <h3 className="font-satoshi font-semibold text-gray-900">
+            <h3 className="font-satoshi font-semibold text-gray-900 dark:text-gray-300">
               {post.creator?.username ?? "Unknown User"}
             </h3>
           </div>
         </div>
 
         <div
-          className="copy_btn"
+          className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur"
           onClick={() => {
             handleCopy()
           }}>
@@ -64,7 +64,9 @@ export default function PromptCard({
           />
         </div>
       </div>
-      <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
+      <p className="my-4 font-satoshi text-sm text-gray-700 dark:text-gray-300">
+        {post.prompt}
+      </p>
       <p
         className="blue_gradient cursor-pointer font-inter text-sm"
         onClick={() => handleTagClick && handleTagClick(post.tag)}>

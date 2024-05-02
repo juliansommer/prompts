@@ -4,7 +4,7 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { signIn, signOut, useSession } from "next-auth/react"
 
-// Nest auth v5 broke this and need next auth v5 or theres typescript errors with session so we need to ignore the error
+// Nest auth v5 broke importing this so we need to ignore the error
 //@ts-expect-error
 import { getProviders } from "next-auth/react"
 
@@ -32,7 +32,9 @@ export default function Nav() {
           height={30}
           className="object-contain"
         />
-        <p className="logo_text">Prompts</p>
+        <p className="font-satoshi text-lg font-semibold tracking-wide text-black max-sm:hidden dark:text-white">
+          Prompts
+        </p>
       </Link>
 
       {/* Desktop Navigation */}
@@ -90,7 +92,7 @@ export default function Nav() {
             />
 
             {toggleDropdown && (
-              <div className="dropdown">
+              <div className="absolute right-0 top-full mt-3 flex w-full min-w-[210px] flex-col items-end justify-end gap-2 rounded-lg bg-white p-5">
                 <Link
                   href="/profile"
                   className="dropdown_link"

@@ -14,6 +14,7 @@ Currently the site has these features:
 - Google Account Sign in
 - Search Functionality
 - View Profiles
+- Theme Toggle
 
 ## Setup
 
@@ -73,11 +74,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 - containerise and run on aws?
 
-- migrate from useSession() to auth()
-
 - prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it? - no button for this but they could make the api request themselves?
-
-- add a footer
 
 - add a way for users to specify what model specifically the prompt is for
 
@@ -92,9 +89,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
   - upvotes field in mongo
   - everytime a user upvotes a post
     - make api request to a new route at prompt/[id]/like that then just adds 1 to the count
-    - prompt/[id]/dislike removes one from count
+    - prompt/[id]/unlike removes one from count
     - would need to include the userid as well in the request to ensure no duplicate ids / can like a post u have already liked, and can display upvotes on the frontend
-
-- add loading skeletons - specifically for loading the prompts, would i modify the PromptCard component or the pages
-
-- add option to switch between light and dark mode

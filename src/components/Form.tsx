@@ -39,7 +39,7 @@ export default function Form({
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder="Write your prompt here..."
             required
-            className="form_textarea"
+            className="mt-2 flex h-[200px] w-full rounded-lg p-3 text-sm text-gray-500 outline-0"
           />
         </label>
         <label className="relative">
@@ -51,7 +51,7 @@ export default function Form({
             onChange={handleTagChange}
             placeholder="Tag (e.g., tag)"
             required
-            className="form_input"
+            className="mt-2 flex w-full rounded-lg p-3 text-sm text-gray-500 outline-0"
           />
         </label>
 

@@ -1,6 +1,8 @@
 import "@styles/globals.css"
+import Footer from "@components/Footer"
 import Nav from "@components/Nav"
 import Provider from "@components/Provider"
+import ThemeProvider from "@components/ThemeProvider"
 import { type Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -19,15 +21,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider session={undefined}>
-          <div className="main">
-            <div className="gradient" />
-          </div>
-          <main className="app">
-            <Nav />
-            {children}
-          </main>
-        </Provider>
+        <ThemeProvider>
+          <Provider session={undefined}>
+            <div className="main"></div>
+            <main className="app">
+              <Nav />
+              {children}
+            </main>
+            <Footer />
+          </Provider>
+        </ThemeProvider>
       </body>
     </html>
   )

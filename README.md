@@ -4,8 +4,6 @@ This project uses Next.js with React, TypeScript, Tailwind CSS and MongoDB to cr
 
 ## Features
 
-Currently the site has these features:
-
 - CRUD
   - Create Post
   - Load Posts
@@ -70,11 +68,3 @@ next, next-auth, eslint and eslint-config-next are locked as
 
 - next-auth 5.0.0-beta.4 and subsequently next 14.1.3 is required to fix a typescript session issue
 - eslint 8.57.0 and subsequently eslint-config-next 14.2.3 is required as next 14.1.3 does not work with eslint 9
-
-## TODO
-
-- add a way for users to specify what model specifically the prompt is for
-
-  - would need to update models/prompt.js and delete all the current records in mongo, add an input field on Form.jsx component, display the model somewhere on promptcard.jsx, modify api/prompt/new/route.js to accept the model field as well
-
-  - also have model work with search so if instead of clicking a model i search it it would still work

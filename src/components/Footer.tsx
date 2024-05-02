@@ -2,13 +2,10 @@ import ThemeButton from "./ThemeButton"
 
 export default function Footer() {
   return (
-    <div className="mx-auto px-4 pt-16 sm:max-w-xl md:max-w-full md:px-24 lg:max-w-screen-xl lg:px-8">
-      <div className="flex flex-col justify-between border-t border-gray-500 pb-5 pt-5 sm:flex-row">
-        <p className="text-sm text-gray-500">
-          <b>Not</b> Copyright © {new Date().getFullYear()} Julian Sommer. All
-          rights reserved.
-        </p>
-        <div className="mt-4 flex items-center space-x-4 text-gray-500 sm:mt-0">
+    <div className="relative z-10 mx-auto max-w-7xl px-6 pt-16 sm:px-16">
+      <div className="flex flex-row justify-between pb-4 pt-4 sm:flex-row">
+        <p className="text-sm text-gray-500">Julian Sommer</p>
+        <div className="flex items-center space-x-4 text-gray-500 sm:mt-0">
           <ThemeButton />
           <a href="https://github.com/juliansommer/prompts">
             <svg viewBox="0 0 30 30" fill="currentColor" className="h-5">

@@ -31,10 +31,10 @@ export default function PromptCard({
   }
 
   return (
-    <div className="h-fit w-full flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20  bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] dark:border-gray-700">
-      <div className="flex items-start justify-between gap-5">
+    <div className="nice_border h-fit w-full flex-1 break-inside-avoid rounded-lg p-6 pb-4 md:w-[360px]">
+      <div className="flex items-center justify-between">
         <div
-          className="flex flex-1 cursor-pointer items-center justify-start gap-3"
+          className="flex cursor-pointer items-center"
           onClick={handleProfileClick}>
           <Image
             src={post.creator?.image ?? ""}
@@ -43,7 +43,7 @@ export default function PromptCard({
             height={40}
             className="rounded-full object-contain"
           />
-          <div className="flex flex-col">
+          <div className="flex flex-col pl-3">
             <h3 className="font-satoshi font-semibold text-gray-900 dark:text-gray-300">
               {post.creator?.username ?? "Unknown User"}
             </h3>
@@ -51,13 +51,13 @@ export default function PromptCard({
         </div>
 
         <div
-          className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur"
+          className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full"
           onClick={() => {
             handleCopy()
           }}>
           {/* Render The Copy Button only if not already copied */}
           <Image
-            src={copied === post.prompt ? "/icons/tick.svg" : "/icons/copy.svg"}
+            src={copied === post.prompt ? "/tick.svg" : "/copy.svg"}
             width={12}
             height={12}
             alt={"Copy button"}
@@ -74,14 +74,14 @@ export default function PromptCard({
       </p>
 
       {session?.user?.id === post.creator?._id && pathName === "/profile" && (
-        <div className="flex-center mt-5 gap-4 border-t border-gray-100 pt-3">
+        <div className="flex-end gap-4 pt-3">
           <p
-            className="blue_gradient cursor-pointer font-inter text-sm"
+            className="cursor-pointer font-inter text-sm text-purple-600"
             onClick={(event) => handleEdit && handleEdit(event)}>
             Edit
           </p>
           <p
-            className="purple_gradient cursor-pointer font-inter text-sm"
+            className="cursor-pointer font-inter text-sm text-red-600"
             onClick={(event) => handleDelete && handleDelete(event)}>
             Delete
           </p>

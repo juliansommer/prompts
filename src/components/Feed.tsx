@@ -6,7 +6,7 @@ import { Post } from "@types"
 
 function PromptCardList({ data, handleTagClick }: PromptCardListProps) {
   return (
-    <div className="prompt_layout mt-16">
+    <div className="prompt_layout mt-6">
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -64,11 +64,12 @@ export default function Feed() {
       <form className="flex-center relative w-full">
         <input
           type="text"
+          name="search"
           placeholder="Search for a tag or a username"
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-satoshi text-sm font-medium shadow-lg focus:border-black focus:outline-none focus:ring-0"
+          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-satoshi text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
         />
       </form>
 

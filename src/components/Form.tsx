@@ -29,29 +29,25 @@ export default function Form({
 
       <form
         onSubmit={handleSubmit}
-        className="glassmorphism mt-10 flex w-full max-w-2xl flex-col gap-7">
+        className="mt-10 flex w-full max-w-2xl flex-col gap-7">
         <label>
-          <span className="font-satoshi text-base font-semibold text-gray-700">
-            Your AI Prompt
-          </span>
+          <span className="form_text">Your AI Prompt</span>
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder="Write your prompt here..."
             required
-            className="mt-2 flex h-[200px] w-full rounded-lg p-3 text-sm text-gray-500 outline-0"
+            className="nice_border mt-2 flex h-[200px] w-full rounded-lg p-3 text-sm dark:text-gray-200"
           />
         </label>
         <label className="relative">
-          <span className="font-satoshi text-base font-semibold text-gray-700">
-            Tag
-          </span>
+          <span className="form_text">Tag</span>
           <input
             value={post.tag}
             onChange={handleTagChange}
             placeholder="Tag (e.g., tag)"
             required
-            className="mt-2 flex w-full rounded-lg p-3 text-sm text-gray-500 outline-0"
+            className="nice_border mt-2 flex w-full rounded-lg p-3 text-sm dark:text-gray-200"
           />
         </label>
 

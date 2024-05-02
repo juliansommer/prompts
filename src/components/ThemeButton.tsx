@@ -6,7 +6,12 @@ import { SunIcon, MoonIcon } from "@heroicons/react/20/solid"
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+
   useEffect(() => setMounted(true), [])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     mounted && (
@@ -18,9 +23,9 @@ export default function ThemeButton() {
           setTheme(theme === "dark" ? "light" : "dark")
         }}>
         {theme === "dark" ? (
-          <SunIcon className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+          <SunIcon className="h-5 w-5 text-gray-500" />
         ) : (
-          <MoonIcon className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+          <MoonIcon className="h-5 w-5 text-gray-500" />
         )}
       </button>
     )

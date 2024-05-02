@@ -26,13 +26,13 @@ export default function Nav() {
     <nav className="flex-between mb-16 w-full pt-3">
       <Link href="/" className="flex-center flex gap-2">
         <Image
-          src="/images/logo.svg"
+          src="/logo.svg"
           alt="Prompt Logo"
           width={30}
           height={30}
           className="object-contain"
         />
-        <p className="font-satoshi text-lg font-semibold tracking-wide text-black max-sm:hidden dark:text-white">
+        <p className="font-satoshi text-lg font-semibold tracking-wide text-black dark:text-white max-sm:hidden">
           Prompts
         </p>
       </Link>
@@ -47,7 +47,7 @@ export default function Nav() {
 
             <button
               type="button"
-              onClick={() => signOut(undefined)}
+              onClick={() => signOut()}
               className="outline_btn">
               Sign Out
             </button>
@@ -107,7 +107,7 @@ export default function Nav() {
                 </Link>
                 <button
                   type="button"
-                  className="black_btn mt-5 w-full"
+                  className="dark:white_btn black_btn mt-5 w-full"
                   onClick={() => {
                     setToggleDropdown(false)
                     signOut()

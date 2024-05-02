@@ -72,26 +72,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## TODO
 
-- add dark background to search bar and reverse sign in so on over in dark mode .black_btn
-
-- containerise and run on aws?
-
-- prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it? - no button for this but they could make the api request themselves?
-
 - add a way for users to specify what model specifically the prompt is for
 
   - would need to update models/prompt.js and delete all the current records in mongo, add an input field on Form.jsx component, display the model somewhere on promptcard.jsx, modify api/prompt/new/route.js to accept the model field as well
 
-  - long term could add a input box and it matches a predetermined list of models and if not just accept custom, think country select dropdown thing
-
-  - then could also have a page where you can view all the posts for that specific model too / filter the results on the main page like when u click a tag
-
   - also have model work with search so if instead of clicking a model i search it it would still work
-
-- add a upvotes system, then would have the most popular prompts displayed first
-
-  - upvotes field in mongo
-  - everytime a user upvotes a post
-    - make api request to a new route at prompt/[id]/like that then just adds 1 to the count
-    - prompt/[id]/unlike removes one from count
-    - would need to include the userid as well in the request to ensure no duplicate ids / can like a post u have already liked, and can display upvotes on the frontend

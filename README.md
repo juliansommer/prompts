@@ -1,6 +1,6 @@
 # Next.js Prompt Sharing App
 
-This project uses Next.js with React, TypeScript, Tailwind CSS and MongoDB to create a basic full stack social media app that allows users to post AI prompts.
+This project uses Next.js with React, TypeScript, Tailwind CSS and MongoDB to create a basic social media app that allows users to post AI prompts.
 
 ## Features
 
@@ -66,9 +66,10 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 ## Locked Packages
 
-- next, next-auth, eslint and eslint-config-next are locked as
-  - next-auth 5.0.0-beta.4 and subsequently next 14.1.3 is required to fix a typescript session issue
-  - eslint 8.57.0 and subsequently eslint-config-next 14.2.3 is required as next 14.1.3 does not work with eslint 9
+next, next-auth, eslint and eslint-config-next are locked as
+
+- next-auth 5.0.0-beta.4 and subsequently next 14.1.3 is required to fix a typescript session issue
+- eslint 8.57.0 and subsequently eslint-config-next 14.2.3 is required as next 14.1.3 does not work with eslint 9
 
 ## TODO
 

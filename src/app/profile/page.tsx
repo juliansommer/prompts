@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
 import Profile from "@components/Profile"
+import { Post } from "@types"
 
 export default function MyProfile() {
   const { data: session } = useSession()
@@ -11,30 +12,32 @@ export default function MyProfile() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`)
+      const response = await fetch(`/api/users/${session?.user?.id}/posts`)
       const data = await response.json()
       setPosts(data)
     }
 
-    if (session?.user.id) {
+    if (session?.user?.id) {
       fetchPosts()
     }
   })
 
-  const handleEdit = (post) => {
+  const handleEdit = (post: Post) => {
     router.push(`/update-prompt?id=${post._id}`)
   }
 
-  const handleDelete = async (post) => {
+  const handleDelete = async (post: Post) => {
     const hasConfirmed = confirm("Are you sure you want to delete this prompt?")
 
     if (hasConfirmed) {
       try {
-        await fetch(`/api/prompt/${post._id.toString()}`, {
+        await fetch(`/api/prompt/${post._id?.toString()}`, {
           method: "DELETE",
         })
 
-        const filteredPosts = posts.filter((item) => item._id !== post._id)
+        const filteredPosts = posts.filter(
+          (item: Post) => item._id !== post._id,
+        )
 
         setPosts(filteredPosts)
       } catch (error) {
@@ -48,8 +51,12 @@ export default function MyProfile() {
       name="Your"
       desc="Welcome to your profile page"
       data={posts}
-      handleEdit={handleEdit}
-      handleDelete={handleDelete}
+      handleEdit={(post: Post | React.MouseEvent<HTMLElement>) =>
+        handleEdit(post as Post)
+      }
+      handleDelete={(post: Post | React.MouseEvent<HTMLElement>) =>
+        handleDelete(post as Post)
+      }
     />
   )
 }

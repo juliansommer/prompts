@@ -1,7 +1,7 @@
 import connectToDB from "@utils/database"
 import User from "@models/user"
 
-export async function GET(request, { params }) {
+export async function GET(request: any, { params }: { params: any }) {
   try {
     await connectToDB()
     const user = await User.findById(params.id).select("username")

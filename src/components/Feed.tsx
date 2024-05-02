@@ -1,8 +1,10 @@
 "use client"
 import { useState, useEffect } from "react"
 import PromptCard from "./PromptCard"
+import { PromptCardListProps } from "@types"
+import { Post } from "@types"
 
-function PromptCardList({ data, handleTagClick }) {
+function PromptCardList({ data, handleTagClick }: PromptCardListProps) {
   return (
     <div className="prompt_layout mt-16">
       {data.map((post) => (
@@ -30,17 +32,17 @@ export default function Feed() {
     fetchPosts()
   }, [])
 
-  const filterPrompts = (searchText) => {
+  const filterPrompts = (searchText: string) => {
     const regex = new RegExp(searchText, "i") // 'i' flag for case-insensitive search
     return allPosts.filter(
-      (item) =>
-        regex.test(item.creator.username) ||
+      (item: Post) =>
+        regex.test(item.creator?.username || "") ||
         regex.test(item.tag) ||
         regex.test(item.prompt),
     )
   }
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = (e: { target: { value: any } }) => {
     const inputValue = e.target.value
     setSearchText(inputValue)
     if (inputValue.length > 2) {
@@ -51,7 +53,7 @@ export default function Feed() {
     }
   }
 
-  const handleTagClick = (tagName) => {
+  const handleTagClick = (tagName: string) => {
     setSearchText(tagName)
     const searchResult = filterPrompts(tagName)
     setSearchedResults(searchResult)

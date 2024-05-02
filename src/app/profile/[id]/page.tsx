@@ -2,9 +2,9 @@
 import { useEffect, useState } from "react"
 import Profile from "@components/Profile"
 
-export default function UserProfile({ params }) {
+export default function UserProfile({ params }: { params: any }) {
   const [userPosts, setUserPosts] = useState([])
-  const [userName, setUserName] = useState([])
+  const [userName, setUserName] = useState("")
 
   useEffect(() => {
     const fetchPosts = async () => {

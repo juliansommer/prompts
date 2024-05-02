@@ -63,11 +63,19 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
+# Locked Packages
+
+- next, next-auth, eslint and eslint-config-next are locked as
+  - next-auth 5.0.0-beta.4 and subsequently next 14.1.3 is required to fix a typescript session issue
+  - eslint 8.57.0 and subsequently eslint-config-next 14.2.3 is required as next 14.1.3 does not work with eslint 9
+
 ## TODO
+
+- containerise and run on aws?
 
 - migrate from useSession() to auth()
 
-- prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it?
+- prevent users from editing / deleting other users' posts, maybe get the sessionid and check the prompt's creator against it before deleting it? - no button for this but they could make the api request themselves?
 
 - add a footer
 
@@ -88,7 +96,5 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
     - would need to include the userid as well in the request to ensure no duplicate ids / can like a post u have already liked, and can display upvotes on the frontend
 
 - add loading skeletons - specifically for loading the prompts, would i modify the PromptCard component or the pages
-
-- add option for users to change username on profile page
 
 - add option to switch between light and dark mode

@@ -2,7 +2,11 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { signIn, signOut, useSession, getProviders } from "next-auth/react"
+import { signIn, signOut, useSession } from "next-auth/react"
+
+// Nest auth v5 broke this and need next auth v5 or theres typescript errors with session so we need to ignore the error
+//@ts-expect-error
+import { getProviders } from "next-auth/react"
 
 export default function Nav() {
   const { data: session } = useSession()
@@ -39,13 +43,16 @@ export default function Nav() {
               Create Post
             </Link>
 
-            <button type="button" onClick={signOut} className="outline_btn">
+            <button
+              type="button"
+              onClick={() => signOut(undefined)}
+              className="outline_btn">
               Sign Out
             </button>
 
             <Link href="/profile">
               <Image
-                src={session?.user.image}
+                src={session?.user.image ?? ""}
                 width={37}
                 height={37}
                 className="rounded-full"
@@ -56,13 +63,12 @@ export default function Nav() {
         ) : (
           <>
             {providers &&
-              Object.values(providers).map((provider) => (
+              Object.values(providers).map((provider: any) => (
                 <button
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="black_btn"
-                >
+                  className="black_btn">
                   Sign In
                 </button>
               ))}
@@ -75,7 +81,7 @@ export default function Nav() {
         {session?.user ? (
           <div className="flex">
             <Image
-              src={session?.user.image}
+              src={session?.user.image ?? ""}
               width={37}
               height={37}
               className="rounded-full"
@@ -88,15 +94,13 @@ export default function Nav() {
                 <Link
                   href="/profile"
                   className="dropdown_link"
-                  onClick={() => setToggleDropdown(false)}
-                >
+                  onClick={() => setToggleDropdown(false)}>
                   My Profile
                 </Link>
                 <Link
                   href="/create-prompt"
                   className="dropdown_link"
-                  onClick={() => setToggleDropdown(false)}
-                >
+                  onClick={() => setToggleDropdown(false)}>
                   Create Prompt
                 </Link>
                 <button
@@ -105,8 +109,7 @@ export default function Nav() {
                   onClick={() => {
                     setToggleDropdown(false)
                     signOut()
-                  }}
-                >
+                  }}>
                   Sign Out
                 </button>
               </div>
@@ -115,13 +118,12 @@ export default function Nav() {
         ) : (
           <>
             {providers &&
-              Object.values(providers).map((provider) => (
+              Object.values(providers).map((provider: any) => (
                 <button
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="black_btn"
-                >
+                  className="black_btn">
                   Sign In
                 </button>
               ))}

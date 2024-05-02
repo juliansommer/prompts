@@ -30,7 +30,7 @@ function UpdatePrompt() {
     }
   }, [promptId])
 
-  const updatePrompt = async (e) => {
+  const updatePrompt = async (e: { preventDefault: () => void }) => {
     e.preventDefault() // prevent browser from reloading on form
     setSubmitting(true)
 

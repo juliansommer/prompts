@@ -1,3 +1,5 @@
+// This can't be moved to TypeScript as theres still issues with NextAuth v5, but NextAuth v5 is required to fix this TypeScript error
+
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import connectToDB from "@utils/database"

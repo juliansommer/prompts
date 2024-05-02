@@ -2,7 +2,7 @@ import connectToDB from "@utils/database"
 import Prompt from "@models/prompt"
 
 // Get one specific prompt
-export async function GET(request, { params }) {
+export async function GET(request: any, { params }: { params: any }) {
   try {
     await connectToDB()
 
@@ -20,7 +20,7 @@ export async function GET(request, { params }) {
 }
 
 // Edit a prompt
-export async function PATCH(request, { params }) {
+export async function PATCH(request: any, { params }: { params: any }) {
   const { prompt, tag } = await request.json()
 
   try {
@@ -46,7 +46,7 @@ export async function PATCH(request, { params }) {
 }
 
 // Delete a prompt
-export const DELETE = async (request, { params }) => {
+export const DELETE = async (request: any, { params }: { params: any }) => {
   try {
     await connectToDB()
 

@@ -7,7 +7,7 @@ export default function Profile({
   data,
   handleEdit,
   handleDelete,
-}: ProfileProps) {
+}: Readonly<ProfileProps>) {
   return (
     <section className="w-full">
       <h1 className="head_text text-left">

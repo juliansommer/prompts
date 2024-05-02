@@ -10,7 +10,7 @@ export default function PromptCard({
   handleTagClick,
   handleEdit,
   handleDelete,
-}: PromptCardProps) {
+}: Readonly<PromptCardProps>) {
   const { data: session } = useSession()
   const pathName = usePathname()
   const router = useRouter()
@@ -18,10 +18,10 @@ export default function PromptCard({
 
   const handleProfileClick = () => {
     console.log(post)
-    if (post.creator._id === session?.user?.id) {
+    if (post.creator?._id === session?.user?.id) {
       return router.push("/profile")
     }
-    router.push(`/profile/${post.creator._id}`)
+    router.push(`/profile/${post.creator?._id}`)
   }
 
   const handleCopy = () => {
@@ -37,15 +37,15 @@ export default function PromptCard({
           className="flex flex-1 cursor-pointer items-center justify-start gap-3"
           onClick={handleProfileClick}>
           <Image
-            src={post.creator.image}
-            alt={`${post.creator.username} image`}
+            src={post.creator?.image ?? ""}
+            alt={`${post.creator?.username} image`}
             width={40}
             height={40}
             className="rounded-full object-contain"
           />
           <div className="flex flex-col">
             <h3 className="font-satoshi font-semibold text-gray-900">
-              {post.creator.username}
+              {post.creator?.username ?? "Unknown User"}
             </h3>
           </div>
         </div>
@@ -71,16 +71,16 @@ export default function PromptCard({
         #{post.tag}
       </p>
 
-      {session?.user?.id === post.creator._id && pathName === "/profile" && (
+      {session?.user?.id === post.creator?._id && pathName === "/profile" && (
         <div className="flex-center mt-5 gap-4 border-t border-gray-100 pt-3">
           <p
             className="blue_gradient cursor-pointer font-inter text-sm"
-            onClick={(event) => handleEdit(event)}>
+            onClick={(event) => handleEdit && handleEdit(event)}>
             Edit
           </p>
           <p
             className="purple_gradient cursor-pointer font-inter text-sm"
-            onClick={(event) => handleDelete(event)}>
+            onClick={(event) => handleDelete && handleDelete(event)}>
             Delete
           </p>
         </div>

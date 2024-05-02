@@ -1,4 +1,5 @@
 import Link from "next/link"
+import { FormProps } from "@types"
 
 export default function Form({
   type,
@@ -6,9 +7,9 @@ export default function Form({
   setPost,
   submitting,
   handleSubmit,
-}) {
+}: Readonly<FormProps>) {
   // Sanitise Tag to be Alphanumeric
-  const handleTagChange = (e) => {
+  const handleTagChange = (e: { target: { value: any } }) => {
     const value = e.target.value
     if (/^[a-z0-9]+$/i.test(value) || value === "") {
       setPost({ ...post, tag: value })
@@ -65,7 +66,7 @@ export default function Form({
           <button
             type="submit"
             disabled={submitting}
-            className="bg-primary-blue rounded-full px-5 py-1.5 text-sm text-white">
+            className="rounded-full bg-primary-blue px-5 py-1.5 text-sm text-white">
             Submit
           </button>
         </div>

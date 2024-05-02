@@ -14,7 +14,7 @@ export default function CreatePrompt() {
     tag: "",
   })
 
-  const createPrompt = async (e) => {
+  const createPrompt = async (e: { preventDefault: () => void }) => {
     e.preventDefault() // prevent browser from reloading on form
     setSubmitting(true)
     try {

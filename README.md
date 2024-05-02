@@ -13,7 +13,7 @@ Currently the site has these features:
   - Delete Post
 - Google Account Sign in
 - Search Functionality
-- View Profiles
+- View User Profiles
 - Theme Toggle
 
 ## Setup
@@ -64,13 +64,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
 
-# Locked Packages
+## Locked Packages
 
 - next, next-auth, eslint and eslint-config-next are locked as
   - next-auth 5.0.0-beta.4 and subsequently next 14.1.3 is required to fix a typescript session issue
   - eslint 8.57.0 and subsequently eslint-config-next 14.2.3 is required as next 14.1.3 does not work with eslint 9
 
 ## TODO
+
+- add dark background to search bar and reverse sign in so on over in dark mode .black_btn
 
 - containerise and run on aws?
 
@@ -83,6 +85,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
   - long term could add a input box and it matches a predetermined list of models and if not just accept custom, think country select dropdown thing
 
   - then could also have a page where you can view all the posts for that specific model too / filter the results on the main page like when u click a tag
+
+  - also have model work with search so if instead of clicking a model i search it it would still work
 
 - add a upvotes system, then would have the most popular prompts displayed first
 

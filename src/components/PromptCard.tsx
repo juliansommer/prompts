@@ -33,14 +33,9 @@ export default function PromptCard({
   return (
     <div className="nice_border h-fit w-full flex-1 break-inside-avoid rounded-lg p-6 pb-4 md:w-[360px]">
       <div className="flex items-center justify-between">
-        <button
+        <div
           className="flex cursor-pointer items-center"
-          onClick={handleProfileClick}
-          onKeyDown={(event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              handleProfileClick()
-            }
-          }}>
+          onClick={handleProfileClick}>
           <Image
             src={post.creator?.image ?? ""}
             alt={`${post.creator?.username} image`}
@@ -53,7 +48,7 @@ export default function PromptCard({
               {post.creator?.username ?? "Unknown User"}
             </h1>
           </div>
-        </button>
+        </div>
 
         <button
           className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full"
@@ -63,8 +58,8 @@ export default function PromptCard({
           {/* Render The Copy Button only if not already copied */}
           <Image
             src={copied === post.prompt ? "/tick.svg" : "/copy.svg"}
-            width={12}
-            height={12}
+            width={20}
+            height={20}
             alt={"Copy button"}
           />
         </button>
@@ -74,12 +69,7 @@ export default function PromptCard({
       </p>
       <button
         className="cursor-pointer font-inter text-sm text-blue-700"
-        onClick={() => handleTagClick && handleTagClick(post.tag)}
-        onKeyDown={(event) => {
-          if (event.key === "Enter" || event.key === " ") {
-            handleTagClick && handleTagClick(post.tag)
-          }
-        }}>
+        onClick={() => handleTagClick && handleTagClick(post.tag)}>
         #{post.tag}
       </button>
 
@@ -87,34 +77,12 @@ export default function PromptCard({
         <div className="flex-end gap-4 pt-3">
           <p
             className="cursor-pointer font-inter text-sm text-purple-600"
-            onClick={(
-              event:
-                | React.MouseEvent<HTMLElement>
-                | React.KeyboardEvent<HTMLParagraphElement>,
-            ) => handleEdit && handleEdit(event)}
-            onKeyDown={(
-              event:
-                | React.KeyboardEvent<HTMLParagraphElement>
-                | React.MouseEvent<HTMLElement>,
-            ) => {
-              if (
-                (event as React.KeyboardEvent<HTMLParagraphElement>).key ===
-                  "Enter" ||
-                (event as React.KeyboardEvent<HTMLParagraphElement>).key === " "
-              ) {
-                handleEdit && handleEdit(event)
-              }
-            }}>
+            onClick={(event) => handleEdit && handleEdit(event)}>
             Edit
           </p>
           <p
             className="cursor-pointer font-inter text-sm text-red-600"
-            onClick={(event) => handleDelete && handleDelete(event)}
-            onKeyDown={(event) => {
-              if (event.key === "Enter" || event.key === " ") {
-                handleDelete && handleDelete(event)
-              }
-            }}>
+            onClick={(event) => handleDelete && handleDelete(event)}>
             Delete
           </p>
         </div>

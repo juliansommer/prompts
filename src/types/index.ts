@@ -27,7 +27,7 @@ export type FormProps = {
   handleSubmit: (e: React.FormEvent) => Promise<void>;
 }
 
-export type HandleEditDelete = (arg: Post | React.MouseEvent<HTMLElement>) => void;
+export type HandleEditDelete = (arg: Post | React.MouseEvent<HTMLElement> | React.KeyboardEvent<HTMLParagraphElement>) => void;
 
 export type ProfileProps = {
   name: string

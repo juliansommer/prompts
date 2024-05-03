@@ -33,9 +33,14 @@ export default function PromptCard({
   return (
     <div className="nice_border h-fit w-full flex-1 break-inside-avoid rounded-lg p-6 pb-4 md:w-[360px]">
       <div className="flex items-center justify-between">
-        <div
+        <button
           className="flex cursor-pointer items-center"
-          onClick={handleProfileClick}>
+          onClick={handleProfileClick}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              handleProfileClick()
+            }
+          }}>
           <Image
             src={post.creator?.image ?? ""}
             alt={`${post.creator?.username} image`}
@@ -44,13 +49,13 @@ export default function PromptCard({
             className="rounded-full object-contain"
           />
           <div className="flex flex-col pl-3">
-            <h3 className="font-satoshi font-semibold text-gray-900 dark:text-gray-300">
+            <h1 className="font-satoshi font-semibold text-gray-900 dark:text-gray-300">
               {post.creator?.username ?? "Unknown User"}
-            </h3>
+            </h1>
           </div>
-        </div>
+        </button>
 
-        <div
+        <button
           className="flex h-7 w-7 cursor-pointer items-center justify-center rounded-full"
           onClick={() => {
             handleCopy()
@@ -62,27 +67,54 @@ export default function PromptCard({
             height={12}
             alt={"Copy button"}
           />
-        </div>
+        </button>
       </div>
-      <p className="my-4 font-satoshi text-sm text-gray-700 dark:text-gray-300">
+      <p className="my-2 font-satoshi text-sm text-gray-700 dark:text-gray-300">
         {post.prompt}
       </p>
-      <p
-        className="blue_gradient cursor-pointer font-inter text-sm"
-        onClick={() => handleTagClick && handleTagClick(post.tag)}>
+      <button
+        className="cursor-pointer font-inter text-sm text-blue-700"
+        onClick={() => handleTagClick && handleTagClick(post.tag)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            handleTagClick && handleTagClick(post.tag)
+          }
+        }}>
         #{post.tag}
-      </p>
+      </button>
 
       {session?.user?.id === post.creator?._id && pathName === "/profile" && (
         <div className="flex-end gap-4 pt-3">
           <p
             className="cursor-pointer font-inter text-sm text-purple-600"
-            onClick={(event) => handleEdit && handleEdit(event)}>
+            onClick={(
+              event:
+                | React.MouseEvent<HTMLElement>
+                | React.KeyboardEvent<HTMLParagraphElement>,
+            ) => handleEdit && handleEdit(event)}
+            onKeyDown={(
+              event:
+                | React.KeyboardEvent<HTMLParagraphElement>
+                | React.MouseEvent<HTMLElement>,
+            ) => {
+              if (
+                (event as React.KeyboardEvent<HTMLParagraphElement>).key ===
+                  "Enter" ||
+                (event as React.KeyboardEvent<HTMLParagraphElement>).key === " "
+              ) {
+                handleEdit && handleEdit(event)
+              }
+            }}>
             Edit
           </p>
           <p
             className="cursor-pointer font-inter text-sm text-red-600"
-            onClick={(event) => handleDelete && handleDelete(event)}>
+            onClick={(event) => handleDelete && handleDelete(event)}
+            onKeyDown={(event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                handleDelete && handleDelete(event)
+              }
+            }}>
             Delete
           </p>
         </div>

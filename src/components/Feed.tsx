@@ -4,7 +4,10 @@ import PromptCard from "./PromptCard"
 import { PromptCardListProps } from "@types"
 import { Post } from "@types"
 
-function PromptCardList({ data, handleTagClick }: PromptCardListProps) {
+function PromptCardList({
+  data,
+  handleTagClick,
+}: Readonly<PromptCardListProps>) {
   return (
     <div className="prompt_layout mt-6">
       {data.map((post) => (

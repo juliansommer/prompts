@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import Profile from "@components/Profile"
 
-export default function UserProfile({ params }: { params: any }) {
+export default function UserProfile({ params }: Readonly<{ params: any }>) {
   const [userPosts, setUserPosts] = useState([])
   const [userName, setUserName] = useState("")
 

@@ -47,7 +47,7 @@
 }
 
 .desc {
-  @apply mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-400 sm:text-xl;
+  @apply mt-5 max-w-2xl text-lg text-gray-700 dark:text-gray-300 sm:text-xl;
 }
 
 .prompt_layout {

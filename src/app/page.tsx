@@ -13,7 +13,7 @@ export default function Home() {
       </p>
       <span className="pt-2 text-sm">
         (you will have to refresh the page and wait to see the prompts as mongo
-        has to spin up, I can't do anything about it)
+        has to spin up, I cannot do anything about it)
       </span>
 
       <Feed />

@@ -22,8 +22,8 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <ThemeProvider
-          enableSystem={true}
           attribute="class"
+          defaultTheme="dark"
           disableTransitionOnChange>
           <Provider session={undefined}>
             <div className="main"></div>

@@ -2,11 +2,10 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { signIn, signOut, useSession } from "next-auth/react"
+import { getProviders, signIn, signOut, useSession } from "next-auth/react"
 
-// Nest auth v5 broke importing this so we need to ignore the error
 //@ts-expect-error
-import { getProviders } from "next-auth/react"
+import type { ProvidersType } from "next-auth/react"
 
 export default function Nav() {
   const { data: session } = useSession()
@@ -16,7 +15,7 @@ export default function Nav() {
 
   useEffect(() => {
     const setUpProviders = async () => {
-      const response = await getProviders()
+      const response: ProvidersType = await getProviders()
       setProviders(response)
     }
     setUpProviders()

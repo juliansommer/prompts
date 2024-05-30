@@ -17,7 +17,7 @@ export default function ThemeButton() {
     mounted && (
       <button
         type="button"
-        className="rounded rounded-md p-2 transition-all hover:bg-gray-300 dark:hover:bg-gray-700"
+        className="rounded-md p-2 transition-all hover:bg-gray-300 dark:hover:bg-gray-700"
         aria-label={theme === "dark" ? "Toggle light mode" : "Toggle dark mode"}
         onClick={() => {
           setTheme(theme === "dark" ? "light" : "dark")

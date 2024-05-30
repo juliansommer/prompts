@@ -1,5 +1,3 @@
-// This can't be moved to TypeScript as theres still issues with NextAuth v5, but NextAuth v5 is required to fix this TypeScript error
-
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 import connectToDB from "@utils/database"
@@ -29,11 +27,11 @@ export const { handlers } = NextAuth({
 
         // check if user already exists
         const userExists = await User.findOne({
-          email: profile.email,
+          email: profile?.email,
         })
 
-        // if user doesnt exist, create new user
-        if (!userExists) {
+        // if user doesnt exist, and profile fields are valid create new user
+        if (!userExists && profile !== null && profile !== undefined && profile.email !== null && profile.email !== undefined) {
           await User.create({
             email: profile.email,
             username: extractUsername(profile.email),

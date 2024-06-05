@@ -1,4 +1,4 @@
-import connectToDB from "@utils/database"
+import connectToDB from "@lib/database"
 import Prompt from "@models/prompt"
 
 // Create a new prompt

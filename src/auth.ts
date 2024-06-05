@@ -1,8 +1,8 @@
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-import connectToDB from "@utils/database"
+import connectToDB from "@lib/database"
 import User from "@models/user"
-import extractUsername from "@utils/extractUsername"
+import extractUsername from "@lib/extractUsername"
 
 export const { handlers } = NextAuth({
   providers: [

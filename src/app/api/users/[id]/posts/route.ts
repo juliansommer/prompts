@@ -1,4 +1,4 @@
-import connectToDB from "@utils/database"
+import connectToDB from "@lib/database"
 import Prompt from "@models/prompt"
 
 export async function GET(request: any, { params }: { params: any }) {

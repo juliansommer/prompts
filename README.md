@@ -72,3 +72,4 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 - make use of server components for fetching data instead of useeffect
 - add dynamic metadata to pages
 - add opengraph images etc
+- update to next 15 and react 19 + then need to remove the no-cache headers for the requests as next doesnt have caching by default anymore

@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ["mongoose"],
+    reactCompiler: true,
   },
+  serverExternalPackages: ["mongoose"],
   images: {
     remotePatterns: [
       {
@@ -11,13 +12,6 @@ const nextConfig = {
         pathname: "**",
       },
     ],
-  },
-  webpack(config) {
-    config.experiments = {
-      ...config.experiments,
-      topLevelAwait: true,
-    }
-    return config
   },
 }
 

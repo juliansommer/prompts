@@ -20,7 +20,6 @@ export default function CreatePrompt() {
     try {
       const response = await fetch("/api/prompt/new", {
         method: "POST",
-        cache: "no-store",
         body: JSON.stringify({
           prompt: post.prompt,
           userId: session?.user?.id,

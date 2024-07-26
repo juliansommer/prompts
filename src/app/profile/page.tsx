@@ -12,9 +12,7 @@ export default function MyProfile() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user?.id}/posts`, {
-        cache: "no-store",
-      })
+      const response = await fetch(`/api/users/${session?.user?.id}/posts`)
       const data = await response.json()
       setPosts(data)
     }
@@ -35,7 +33,6 @@ export default function MyProfile() {
       try {
         await fetch(`/api/prompt/${post._id?.toString()}`, {
           method: "DELETE",
-          cache: "no-store",
         })
 
         const filteredPosts = posts.filter(

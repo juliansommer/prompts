@@ -8,9 +8,7 @@ export default function UserProfile({ params }: Readonly<{ params: any }>) {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${params?.id}/posts`, {
-        cache: "no-store",
-      })
+      const response = await fetch(`/api/users/${params?.id}/posts`)
       const data = await response.json()
 
       setUserPosts(data)
@@ -22,9 +20,7 @@ export default function UserProfile({ params }: Readonly<{ params: any }>) {
   // need to make request to the api to get the username based off the id
   useEffect(() => {
     const fetchName = async () => {
-      const response = await fetch(`/api/users/${params?.id}/name`, {
-        cache: "no-store",
-      })
+      const response = await fetch(`/api/users/${params?.id}/name`)
       const data = await response.json()
 
       setUserName(data)

@@ -4,7 +4,7 @@ import User from "@/models/user"
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
 
-export const { handlers } = NextAuth({
+export const { handlers, auth } = NextAuth({
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,

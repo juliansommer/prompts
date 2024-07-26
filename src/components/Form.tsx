@@ -37,7 +37,7 @@ export default function Form({
         </span>
       </h1>
 
-      <p className="mt-5 max-w-2xl max-w-md text-left text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
+      <p className="mt-5 max-w-2xl text-left text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
         {type} and share amazing prompts with the world, and let your
         imagination run wild with any AI-powered platform.
       </p>

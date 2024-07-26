@@ -1,5 +1,18 @@
+import { type Post } from "@/types"
 import Link from "next/link"
-import { FormProps } from "@types"
+
+interface PostType {
+  prompt: string
+  tag: string
+}
+
+interface FormProps {
+  type: string
+  post: Post
+  setPost: React.Dispatch<React.SetStateAction<PostType>>
+  submitting: boolean
+  handleSubmit: (e: React.FormEvent) => Promise<void>
+}
 
 export default function Form({
   type,
@@ -62,7 +75,7 @@ export default function Form({
           <button
             type="submit"
             disabled={submitting}
-            className="rounded-full bg-primary-blue px-5 py-1.5 text-sm text-white">
+            className="bg-primary-blue rounded-full px-5 py-1.5 text-sm text-white">
             Submit
           </button>
         </div>

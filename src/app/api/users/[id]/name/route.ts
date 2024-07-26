@@ -1,5 +1,5 @@
-import connectToDB from "@lib/database"
-import User from "@models/user"
+import connectToDB from "@/lib/database"
+import User from "@/models/user"
 
 export async function GET(request: any, { params }: { params: any }) {
   try {

@@ -1,4 +1,4 @@
-import Feed from "@components/Feed"
+import Feed from "@/components/Feed"
 
 export default function Home() {
   return (
@@ -10,6 +10,9 @@ export default function Home() {
       </h1>
       <p className="desc text-center">
         Prompts is an open source tool to discover and share prompts
+      </p>
+      <p className="text-center">
+        (Mongo might need a little bit to start up so just wait a sec)
       </p>
       <Feed />
     </section>

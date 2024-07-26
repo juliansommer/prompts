@@ -1,7 +1,7 @@
 "use client"
-import { useEffect, useState } from "react"
+import { MoonIcon, SunIcon } from "@heroicons/react/20/solid"
 import { useTheme } from "next-themes"
-import { SunIcon, MoonIcon } from "@heroicons/react/20/solid"
+import { useEffect, useState } from "react"
 
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme()

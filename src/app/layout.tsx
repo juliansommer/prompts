@@ -1,9 +1,9 @@
-import "./globals.css"
-import Footer from "@components/Footer"
-import Nav from "@components/Nav"
-import Provider from "@components/Provider"
+import Footer from "@/components/Footer"
+import Nav from "@/components/Nav"
+import Provider from "@/components/Provider"
 import { type Metadata } from "next"
 import { ThemeProvider } from "next-themes"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Prompts",

@@ -1,8 +1,8 @@
+import connectToDB from "@/lib/database"
+import extractUsername from "@/lib/extractUsername"
+import User from "@/models/user"
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-import connectToDB from "@lib/database"
-import User from "@models/user"
-import extractUsername from "@lib/extractUsername"
 
 export const { handlers } = NextAuth({
   providers: [
@@ -31,7 +31,11 @@ export const { handlers } = NextAuth({
         })
 
         // if user doesnt exist, and profile fields are valid create new user
-        if (!userExists && profile !== null && profile !== undefined && profile.email !== null && profile.email !== undefined) {
+        if (
+          !userExists &&
+          profile?.email !== null &&
+          profile?.email !== undefined
+        ) {
           await User.create({
             email: profile.email,
             username: extractUsername(profile.email),

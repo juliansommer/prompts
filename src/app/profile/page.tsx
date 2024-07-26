@@ -1,9 +1,9 @@
 "use client"
-import { useState, useEffect } from "react"
+import Profile from "@/components/Profile"
+import { type Post } from "@/types"
 import { useSession } from "next-auth/react"
 import { useRouter } from "next/navigation"
-import Profile from "@components/Profile"
-import { Post } from "@types"
+import { useEffect, useState } from "react"
 
 export default function MyProfile() {
   const { data: session } = useSession()

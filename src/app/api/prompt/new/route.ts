@@ -1,5 +1,5 @@
-import connectToDB from "@lib/database"
-import Prompt from "@models/prompt"
+import connectToDB from "@/lib/database"
+import Prompt from "@/models/prompt"
 
 // Create a new prompt
 export async function POST(request: any) {

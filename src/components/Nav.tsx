@@ -1,10 +1,10 @@
 "use client"
-import Link from "next/link"
-import Image from "next/image"
-import { useState, useEffect } from "react"
 import { getProviders, signIn, signOut, useSession } from "next-auth/react"
+import Image from "next/image"
+import Link from "next/link"
+import { useEffect, useState } from "react"
 
-//@ts-expect-error
+//@ts-expect-error next-auth v5 bug
 import type { ProvidersType } from "next-auth/react"
 
 export default function Nav() {

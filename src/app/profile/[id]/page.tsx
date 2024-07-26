@@ -1,6 +1,6 @@
 "use client"
+import Profile from "@/components/Profile"
 import { useEffect, useState } from "react"
-import Profile from "@components/Profile"
 
 export default function UserProfile({ params }: Readonly<{ params: any }>) {
   const [userPosts, setUserPosts] = useState([])

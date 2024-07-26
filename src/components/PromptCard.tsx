@@ -1,9 +1,16 @@
 "use client"
-import { useState } from "react"
-import Image from "next/image"
+import { type HandleEditDelete, type Post } from "@/types"
 import { useSession } from "next-auth/react"
+import Image from "next/image"
 import { usePathname, useRouter } from "next/navigation"
-import { PromptCardProps } from "@types"
+import { useState } from "react"
+
+interface PromptCardProps {
+  post: Post
+  handleTagClick?: (tag: string) => void
+  handleEdit?: HandleEditDelete
+  handleDelete?: HandleEditDelete
+}
 
 export default function PromptCard({
   post,
@@ -64,11 +71,11 @@ export default function PromptCard({
           />
         </button>
       </div>
-      <p className="my-2 font-satoshi text-sm text-gray-700 dark:text-gray-300">
+      <p className="font-satoshi my-2 text-sm text-gray-700 dark:text-gray-300">
         {post.prompt}
       </p>
       <button
-        className="cursor-pointer font-inter text-sm text-blue-700"
+        className="font-inter cursor-pointer text-sm text-blue-700"
         onClick={() => handleTagClick && handleTagClick(post.tag)}>
         #{post.tag}
       </button>
@@ -76,12 +83,12 @@ export default function PromptCard({
       {session?.user?.id === post.creator?._id && pathName === "/profile" && (
         <div className="flex-end gap-4 pt-3">
           <p
-            className="cursor-pointer font-inter text-sm text-purple-600"
+            className="font-inter cursor-pointer text-sm text-purple-600"
             onClick={(event) => handleEdit && handleEdit(event)}>
             Edit
           </p>
           <p
-            className="cursor-pointer font-inter text-sm text-red-600"
+            className="font-inter cursor-pointer text-sm text-red-600"
             onClick={(event) => handleDelete && handleDelete(event)}>
             Delete
           </p>

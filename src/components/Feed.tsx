@@ -1,8 +1,12 @@
 "use client"
-import { useState, useEffect } from "react"
+import { type Post } from "@/types"
+import { useEffect, useState } from "react"
 import PromptCard from "./PromptCard"
-import { PromptCardListProps } from "@types"
-import { Post } from "@types"
+
+interface PromptCardListProps {
+  data: Post[]
+  handleTagClick: (tag: string) => void
+}
 
 function PromptCardList({
   data,
@@ -39,7 +43,7 @@ export default function Feed() {
     const regex = new RegExp(searchText, "i") // 'i' flag for case-insensitive search
     return allPosts.filter(
       (item: Post) =>
-        regex.test(item.creator?.username || "") ||
+        regex.test(item.creator?.username ?? "") ||
         regex.test(item.tag) ||
         regex.test(item.prompt),
     )
@@ -72,7 +76,7 @@ export default function Feed() {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-satoshi text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
+          className="font-satoshi peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
         />
       </form>
 

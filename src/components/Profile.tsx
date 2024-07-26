@@ -1,5 +1,13 @@
+import { type HandleEditDelete, type Post } from "@/types"
 import PromptCard from "./PromptCard"
-import { ProfileProps } from "@types"
+
+interface ProfileProps {
+  name: string
+  desc: string
+  data: Post[]
+  handleEdit?: HandleEditDelete
+  handleDelete?: HandleEditDelete
+}
 
 export default function Profile({
   name,

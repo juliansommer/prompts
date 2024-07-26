@@ -35,10 +35,14 @@ cd prompts
 
 **Installation**
 
-Install the project dependencies using npm:
-
+Install pnpm if needed
 ```bash
-npm install
+npm install -g pnpm
+```
+
+Install the project dependencies using pnpm:
+```bash
+pnpm install
 ```
 
 **Set Up Environment Variables**
@@ -57,7 +61,7 @@ MONGODB_URI= (Your MongoDB URI)
 **Running the Project**
 
 ```bash
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.

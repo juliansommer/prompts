@@ -46,7 +46,7 @@ export default function Form({
         onSubmit={handleSubmit}
         className="mt-10 flex w-full max-w-2xl flex-col gap-7">
         <label>
-          <span className="font-satoshi text-base font-semibold text-gray-700 dark:text-gray-300">
+          <span className="text-base font-semibold text-gray-700 dark:text-gray-300">
             Your AI Prompt
           </span>
           <textarea
@@ -58,7 +58,7 @@ export default function Form({
           />
         </label>
         <label className="relative">
-          <span className="font-satoshi text-base font-semibold text-gray-700 dark:text-gray-300">
+          <span className="text-base font-semibold text-gray-700 dark:text-gray-300">
             Tag
           </span>
           <input

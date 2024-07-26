@@ -76,7 +76,7 @@ export default function Feed() {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-satoshi text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
+          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
         />
       </form>
 

@@ -3,7 +3,13 @@ import Nav from "@/components/Nav"
 import Provider from "@/components/Provider"
 import { type Metadata } from "next"
 import { ThemeProvider } from "next-themes"
+import { Inter as FontSans } from "next/font/google"
 import "./globals.css"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 // order of this doesnt matter as next puts the important stuff (viewport, themecolour, title description) first
 // then puts the others alphabeticised
@@ -48,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={fontSans.variable} suppressHydrationWarning>
       <body>
         <ThemeProvider
           attribute="class"

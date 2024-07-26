@@ -31,7 +31,7 @@ export default function Nav() {
           height={30}
           className="object-contain"
         />
-        <p className="font-satoshi text-lg font-semibold tracking-wide text-black dark:text-white max-sm:hidden">
+        <p className="text-lg font-semibold tracking-wide text-black dark:text-white max-sm:hidden">
           Prompts
         </p>
       </Link>
@@ -42,14 +42,14 @@ export default function Nav() {
           <div className="flex gap-3 md:gap-5">
             <Link
               href="create"
-              className="flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center font-inter text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
+              className="flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
               Create Post
             </Link>
 
             <button
               type="button"
               onClick={() => signOut()}
-              className="flex items-center justify-center rounded-full border border-black bg-transparent px-5 py-1.5 text-center font-inter text-sm text-black transition-all hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
+              className="flex items-center justify-center rounded-full border border-black bg-transparent px-5 py-1.5 text-center text-sm text-black transition-all hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
               Sign Out
             </button>
 
@@ -71,7 +71,7 @@ export default function Nav() {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center font-inter text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
+                  className="flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
                   Sign In
                 </button>
               ))}
@@ -96,19 +96,19 @@ export default function Nav() {
               <div className="absolute right-0 top-full mt-3 flex w-full min-w-[210px] flex-col items-end justify-end gap-2 rounded-lg bg-white p-5">
                 <Link
                   href="/profile"
-                  className="font-inter text-sm font-medium text-gray-700 hover:text-gray-500"
+                  className="text-sm font-medium text-gray-700 hover:text-gray-500"
                   onClick={() => setToggleDropdown(false)}>
                   My Profile
                 </Link>
                 <Link
                   href="/create-prompt"
-                  className="font-inter text-sm font-medium text-gray-700 hover:text-gray-500"
+                  className="text-sm font-medium text-gray-700 hover:text-gray-500"
                   onClick={() => setToggleDropdown(false)}>
                   Create Prompt
                 </Link>
                 <button
                   type="button"
-                  className="mt-5 flex w-full items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center font-inter text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
+                  className="mt-5 flex w-full items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
                   onClick={() => {
                     setToggleDropdown(false)
                     signOut()
@@ -126,7 +126,7 @@ export default function Nav() {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center font-inter text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
+                  className="flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
                   Sign In
                 </button>
               ))}

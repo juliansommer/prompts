@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss"
+import { fontFamily } from "tailwindcss/defaultTheme"
 
 const config = {
   content: [
@@ -9,8 +10,7 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        satoshi: ["Satoshi", "sans-serif"],
-        inter: ["Inter", "sans-serif"],
+        sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
         "primary-blue": "#37B9F1",

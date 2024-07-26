@@ -22,8 +22,8 @@ export default function Nav() {
   }, [])
 
   return (
-    <nav className="flex-between mb-16 w-full pt-3">
-      <Link href="/" className="flex-center flex gap-2">
+    <nav className="mb-16 flex w-full items-center justify-between pt-3">
+      <Link href="/" className="flex items-center justify-center gap-2">
         <Image
           src="/logo.svg"
           alt="Prompt Logo"
@@ -40,14 +40,16 @@ export default function Nav() {
       <div className="hidden sm:flex">
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
-            <Link href="create-prompt" className="black_btn">
+            <Link
+              href="create"
+              className="font-inter flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
               Create Post
             </Link>
 
             <button
               type="button"
               onClick={() => signOut()}
-              className="outline_btn">
+              className="font-inter flex items-center justify-center rounded-full border border-black bg-transparent px-5 py-1.5 text-center text-sm text-black transition-all hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-black">
               Sign Out
             </button>
 
@@ -69,7 +71,7 @@ export default function Nav() {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="black_btn">
+                  className="font-inter flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
                   Sign In
                 </button>
               ))}
@@ -94,19 +96,19 @@ export default function Nav() {
               <div className="absolute right-0 top-full mt-3 flex w-full min-w-[210px] flex-col items-end justify-end gap-2 rounded-lg bg-white p-5">
                 <Link
                   href="/profile"
-                  className="dropdown_link"
+                  className="font-inter text-sm font-medium text-gray-700 hover:text-gray-500"
                   onClick={() => setToggleDropdown(false)}>
                   My Profile
                 </Link>
                 <Link
                   href="/create-prompt"
-                  className="dropdown_link"
+                  className="font-inter text-sm font-medium text-gray-700 hover:text-gray-500"
                   onClick={() => setToggleDropdown(false)}>
                   Create Prompt
                 </Link>
                 <button
                   type="button"
-                  className="dark:white_btn black_btn mt-5 w-full"
+                  className="font-inter mt-5 flex w-full items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white"
                   onClick={() => {
                     setToggleDropdown(false)
                     signOut()
@@ -124,7 +126,7 @@ export default function Nav() {
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="black_btn">
+                  className="font-inter flex items-center justify-center rounded-full border border-black bg-black px-5 py-1.5 text-center text-sm text-white transition-all hover:bg-white hover:text-black dark:border-white dark:bg-white dark:text-black dark:hover:bg-black dark:hover:text-white">
                   Sign In
                 </button>
               ))}

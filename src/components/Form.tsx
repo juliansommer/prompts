@@ -30,12 +30,14 @@ export default function Form({
   }
 
   return (
-    <section className="flex-start w-full max-w-full flex-col">
-      <h1 className="head_text text-left">
-        <span className="blue_gradient">{type} Post</span>
+    <section className="flex w-full max-w-full flex-col items-start justify-start">
+      <h1 className="mt-5 text-left text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl">
+        <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          {type} Post
+        </span>
       </h1>
 
-      <p className="desc max-w-md text-left">
+      <p className="mt-5 max-w-2xl max-w-md text-left text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
         {type} and share amazing prompts with the world, and let your
         imagination run wild with any AI-powered platform.
       </p>
@@ -44,27 +46,31 @@ export default function Form({
         onSubmit={handleSubmit}
         className="mt-10 flex w-full max-w-2xl flex-col gap-7">
         <label>
-          <span className="form_text">Your AI Prompt</span>
+          <span className="font-satoshi text-base font-semibold text-gray-700 dark:text-gray-300">
+            Your AI Prompt
+          </span>
           <textarea
             value={post.prompt}
             onChange={(e) => setPost({ ...post, prompt: e.target.value })}
             placeholder="Write your prompt here..."
             required
-            className="nice_border mt-2 flex h-[200px] w-full rounded-lg p-3 text-sm dark:text-gray-200"
+            className="mt-2 flex h-[200px] w-full rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-3 text-sm text-gray-500 outline-0 backdrop-blur-lg backdrop-filter dark:border-gray-700 dark:bg-black/10 dark:text-gray-200"
           />
         </label>
         <label className="relative">
-          <span className="form_text">Tag</span>
+          <span className="font-satoshi text-base font-semibold text-gray-700 dark:text-gray-300">
+            Tag
+          </span>
           <input
             value={post.tag}
             onChange={handleTagChange}
             placeholder="Tag (e.g., tag)"
             required
-            className="nice_border mt-2 flex w-full rounded-lg p-3 text-sm dark:text-gray-200"
+            className="mt-2 flex w-full rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-3 text-sm text-gray-500 outline-0 backdrop-blur-lg backdrop-filter dark:border-gray-700 dark:bg-black/10 dark:text-gray-200"
           />
         </label>
 
-        <div className="flex-end mx-3 mb-5 gap-4">
+        <div className="mx-3 mb-5 flex items-center justify-end gap-4">
           {/* Conditional link based on whether editing or creating a new post */}
           <Link
             href={type === "Edit" ? "/profile" : "/"}
@@ -75,7 +81,7 @@ export default function Form({
           <button
             type="submit"
             disabled={submitting}
-            className="bg-primary-blue rounded-full px-5 py-1.5 text-sm text-white">
+            className="rounded-full bg-primary-blue px-5 py-1.5 text-sm text-white">
             Submit
           </button>
         </div>

@@ -36,11 +36,13 @@ cd prompts
 **Installation**
 
 Install pnpm if needed
+
 ```bash
 npm install -g pnpm
 ```
 
 Install the project dependencies using pnpm:
+
 ```bash
 pnpm install
 ```
@@ -65,3 +67,8 @@ pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
+
+# TODO
+- make use of server components for fetching data instead of useeffect
+- add dynamic metadata to pages
+- add opengraph images etc

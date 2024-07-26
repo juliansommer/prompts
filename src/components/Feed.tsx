@@ -13,7 +13,7 @@ function PromptCardList({
   handleTagClick,
 }: Readonly<PromptCardListProps>) {
   return (
-    <div className="prompt_layout mt-6">
+    <div className="mt-6 space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3">
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -68,7 +68,7 @@ export default function Feed() {
 
   return (
     <section className="mx-auto mt-16 flex w-full max-w-xl flex-col items-center justify-center gap-2">
-      <form className="flex-center relative w-full">
+      <form className="relative flex w-full items-center justify-center">
         <input
           type="text"
           name="search"
@@ -76,7 +76,7 @@ export default function Feed() {
           value={searchText}
           onChange={handleSearchChange}
           required
-          className="font-satoshi peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
+          className="peer block w-full rounded-md border border-gray-200 bg-white py-2.5 pl-5 pr-12 font-satoshi text-sm font-medium focus:outline-none focus:ring-0 dark:border-gray-700 dark:bg-black/5"
         />
       </form>
 

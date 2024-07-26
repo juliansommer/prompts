@@ -22,10 +22,10 @@ export default function MyProfile() {
     if (session?.user?.id) {
       fetchPosts()
     }
-  })
+  }, [session])
 
   const handleEdit = (post: Post) => {
-    router.push(`/update-prompt?id=${post._id}`)
+    router.push(`/update?id=${post._id}`)
   }
 
   const handleDelete = async (post: Post) => {

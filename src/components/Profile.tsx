@@ -18,11 +18,15 @@ export default function Profile({
 }: Readonly<ProfileProps>) {
   return (
     <section className="w-full">
-      <h1 className="head_text text-left">
-        <span className="blue_gradient">{name} Profile</span>
+      <h1 className="mt-5 text-left text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl">
+        <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+          {name} Profile
+        </span>
       </h1>
-      <p className="desc text-left">{desc}</p>
-      <div className="prompt_layout mt-10">
+      <p className="mt-5 max-w-2xl text-left text-lg text-gray-700 dark:text-gray-300 sm:text-xl">
+        {desc}
+      </p>
+      <div className="mt-10 space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3">
         {data.map((post) => (
           <PromptCard
             key={post._id}

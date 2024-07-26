@@ -38,7 +38,7 @@ export default function PromptCard({
   }
 
   return (
-    <div className="nice_border h-fit w-full flex-1 break-inside-avoid rounded-lg p-6 pb-4 md:w-[360px]">
+    <div className="h-fit w-full flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 text-gray-500 outline-0 backdrop-blur-lg backdrop-filter dark:border-gray-700 dark:bg-black/10 md:w-[360px]">
       <div className="flex items-center justify-between">
         <div
           className="flex cursor-pointer items-center"
@@ -71,24 +71,24 @@ export default function PromptCard({
           />
         </button>
       </div>
-      <p className="font-satoshi my-2 text-sm text-gray-700 dark:text-gray-300">
+      <p className="my-2 font-satoshi text-sm text-gray-700 dark:text-gray-300">
         {post.prompt}
       </p>
       <button
-        className="font-inter cursor-pointer text-sm text-blue-700"
+        className="cursor-pointer font-inter text-sm text-blue-700"
         onClick={() => handleTagClick && handleTagClick(post.tag)}>
         #{post.tag}
       </button>
 
       {session?.user?.id === post.creator?._id && pathName === "/profile" && (
-        <div className="flex-end gap-4 pt-3">
+        <div className="flex items-center justify-end gap-4 pt-3">
           <p
-            className="font-inter cursor-pointer text-sm text-purple-600"
+            className="cursor-pointer font-inter text-sm text-purple-600"
             onClick={(event) => handleEdit && handleEdit(event)}>
             Edit
           </p>
           <p
-            className="font-inter cursor-pointer text-sm text-red-600"
+            className="cursor-pointer font-inter text-sm text-red-600"
             onClick={(event) => handleDelete && handleDelete(event)}>
             Delete
           </p>

@@ -15,7 +15,8 @@ export default function Home() {
         Prompts is an open source tool to discover and share prompts
       </p>
       <p className="text-center">
-        (Mongo might need a little bit to start up so just wait a sec)
+        (Mongo might need a little bit to start up so just wait a sec for the
+        prompts to load)
       </p>
       <Feed />
     </section>

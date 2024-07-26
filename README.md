@@ -70,6 +70,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to view the 
 
 # TODO
 
+- fix the layout shift
 - make use of server components for fetching data instead of useeffect
 - add dynamic metadata to pages
 - add opengraph images etc

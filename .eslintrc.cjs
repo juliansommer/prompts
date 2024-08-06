@@ -4,7 +4,7 @@ const config = {
   parserOptions: {
     project: true,
   },
-  plugins: ["@typescript-eslint", "eslint-plugin-react-compiler"],
+  plugins: ["@typescript-eslint"],
   extends: [
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
@@ -25,14 +25,23 @@ const config = {
         },
       },
     ],
+
+    // allow anys
     "@typescript-eslint/no-unsafe-argument": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/no-unsafe-return": "off",
+
     "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }],
     "@typescript-eslint/require-await": "off",
-    "react-compiler/react-compiler": "error",
+    "react/function-component-definition": [
+      2,
+      {
+        namedComponents: "function-declaration",
+        unnamedComponents: "arrow-function",
+      },
+    ],
   },
 }
 module.exports = config

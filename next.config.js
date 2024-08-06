@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    reactCompiler: true,
+    serverComponentsExternalPackages: ["mongoose"],
   },
-  serverExternalPackages: ["mongoose"],
   images: {
     remotePatterns: [
       {

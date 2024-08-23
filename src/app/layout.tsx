@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer"
 import Nav from "@/components/Nav"
 import Provider from "@/components/Provider"
-import { type Metadata } from "next"
+import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { Inter as FontSans } from "next/font/google"
 import "./globals.css"
@@ -46,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fontSans.variable} suppressHydrationWarning>
-      <body className="antialiased">
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

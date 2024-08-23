@@ -49,7 +49,7 @@ pnpm install
 
 **Set Up Environment Variables**
 
-Create a `.env` file in the root of your project and add the following content:
+Create a `.env` file in the root of your project and add the following content (see `.env.example` for reference):
 
 ```env
 NEXTAUTH_URL=http://localhost:3000
@@ -67,13 +67,3 @@ pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to view the project.
-
-# TODO
-
-- nav is re rendering when it shouldnt, which then makes calls to auth
-- stop using useSession
-- fix the layout shift
-- make use of server components for fetching data instead of useeffect
-- add dynamic metadata to pages (need to not have client first)
-- add opengraph images etc
-- add loading skeletons?

@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
-const config = {
+const config: Config = {
   content: [
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,6 +18,6 @@ const config = {
     },
   },
   plugins: [],
-} satisfies Config
+}
 
 export default config

@@ -11,40 +11,31 @@ const fontSans = FontSans({
   variable: "--font-sans",
 })
 
-// order of this doesnt matter as next puts the important stuff (viewport, themecolour, title description) first
-// then puts the others alphabeticised
 export const metadata: Metadata = {
-  // assume prod
   metadataBase: new URL("https://prompts-eight-xi.vercel.app"),
   title: {
     template: "%s | Prompts",
     default: "Prompts",
   },
   description: "Discover & Share AI Prompts",
-  applicationName: "Prompts",
-  keywords: ["AI", "Prompts", "OpenAI", "Share", "Discover"],
-  creator: "Julian Sommer",
-
-  // not defining title and description in og as next will use the metadata.title and metadata.description
-  // so can update these on page and it will also update the open graph and twitter cards
-  // twitter is not defined as next does it automatically with the title and description so can keep all 3 consistent easily
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
   openGraph: {
     siteName: "Prompts",
     locale: "en_US",
     type: "website",
   },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      noimageindex: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+  twitter: {
+    site: "https://prompts-eight-xi.vercel.app",
   },
 }
 
@@ -55,7 +46,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={fontSans.variable} suppressHydrationWarning>
-      <body>
+      <body className="antialiased">
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

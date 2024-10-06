@@ -14,6 +14,11 @@ This project uses Next.js with React, TypeScript, Tailwind CSS and MongoDB to cr
 - View User Profiles
 - Theme Toggle
 
+## Pages
+![home](https://github.com/user-attachments/assets/b0316277-a0f4-42c4-a41f-3f8d26066ff6)
+![profile](https://github.com/user-attachments/assets/d829ddcb-96e6-4940-acc8-534f716af0a1)
+![edit](https://github.com/user-attachments/assets/6f2ce985-3432-425a-b6b4-bbf15dc05505)
+
 ## Setup
 
 Follow these steps to run the project locally.
